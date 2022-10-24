@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxi generate && rm -rf docs && mv .output/public docs && touch docs/.nojekyll && cp CNAME docs/",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
