@@ -3,5 +3,5 @@ export default defineNuxtConfig({
     css: [
         '@fortawesome/fontawesome-free/css/all.min.css'
     ],
-    modules: ['@nuxtjs/tailwindcss']
+    modules: ['@nuxtjs/tailwindcss', '@sidebase/nuxt-user']
 })

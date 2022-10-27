@@ -6,7 +6,7 @@
           Not logged in
         </h1>
       </div>
-      <button class="flex items-center justify-center space-x-2 bg-green-500 text-white rounded-lg py-2 px-3 text-lg" @click="$emit('login')">
+      <button class="flex items-center justify-center space-x-2 bg-green-500 text-white rounded-lg py-2 px-3 text-lg" @click="$emit('signIn')">
         <i class="fa fa-right-to-bracket pt-0.5" />
         <span>Login</span>
       </button>

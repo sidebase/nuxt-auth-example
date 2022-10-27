@@ -1,17 +1,28 @@
 <template>
-  <div class="my-3">
-    <h1 class="text-2xl mb-2">
-      Welcome to the <span class="text-gray-200 bg-gray-800 py-0.5 px-1.5 font-mono rounded">nuxt-user</span> demo!
-    </h1>
-    <p>
-      This page show the features of the module as well as code snippets of how to integrate it into your own project.
-    </p>
-    <p>
-      To get started click "login" at the bottom of this page.
-    </p>
-    <br />
-    <p>
-      If you run into any issues you can view our documentation here, or open an issue.
-    </p>
+  <div class="max-w-5xl mx-auto mt-5 px-5">
+    <h3 class="text-xl font-bold ">Authentication Overview</h3>
+    <p class="text-sm">See all available authentication & session information below.</p>
+    <pre v-if="status"><span>Status:</span> {{ status }}</pre>
+    <pre v-if="data"><span>Data:</span> {{ data }}</pre>
+    <pre v-if="csrfToken"><span>CSRF Token:</span> {{ csrfToken }}</pre>
+    <pre v-if="providers"><span>Providers:</span> {{ providers }}</pre>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useSession } from '#imports'
+
+const { data, status, getCsrfToken, getProviders } = await useSession({ required: false })
+const providers = await getProviders()
+const csrfToken = await getCsrfToken()
+</script>
+
+<style scoped>
+pre {
+  @apply bg-gray-800 text-white p-3 my-3 rounded shadow overflow-x-auto;
+}
+
+pre span {
+  @apply text-green-400;
+}
+</style>

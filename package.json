@@ -10,6 +10,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
     "@nuxtjs/tailwindcss": "^6.1.0",
+    "@sidebase/nuxt-user": "^0.0.1-alpha.1",
     "nuxt": "3.0.0-rc.12"
   }
 }

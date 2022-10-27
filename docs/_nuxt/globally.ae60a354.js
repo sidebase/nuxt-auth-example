@@ -1,0 +1,1 @@
+import{S as e}from"./Secret.7f805996.js";import{a as o,c as t,o as a}from"./entry.92e37a08.js";const p=o({__name:"globally",setup(r){return(s,c)=>(a(),t(e,{"protection-type":"global",href:"https://github.com/sidebase/nuxt-user#global-middlewares"}))}});export{p as default};
