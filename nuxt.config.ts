@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@sidebase/nuxt-auth'],
     auth: {
         nextAuth: {
+            url: process.env.NUXT_URL,
             options: {
                 secret: process.env.NUXT_SECRET,
                 providers: [GithubProvider({
