@@ -1,1 +1,0 @@
-import{S as e}from"./Secret.7f805996.js";import{a as t,c as a,o}from"./entry.92e37a08.js";const p=t({__name:"named",setup(r){return(n,s)=>(o(),a(e,{"protection-type":"named",href:"https://github.com/sidebase/nuxt-user#named-middlewares"}))}});export{p as default};

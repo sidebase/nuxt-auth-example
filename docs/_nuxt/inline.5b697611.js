@@ -1,1 +1,0 @@
-import{a as e,c as t,o as n}from"./entry.92e37a08.js";import{S as o}from"./Secret.7f805996.js";const p=e({__name:"inline",setup(r){return(i,s)=>(n(),t(o,{"protection-type":"inline",href:"https://github.com/sidebase/nuxt-user#inline-middlewares"}))}});export{p as default};

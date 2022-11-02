@@ -3,14 +3,13 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxi generate && rm -rf docs && mv .output/public docs && touch docs/.nojekyll && cp CNAME docs/",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
     "@nuxtjs/tailwindcss": "^6.1.0",
-    "@sidebase/nuxt-user": "^0.0.1-alpha.1",
+    "@sidebase/nuxt-auth": "^0.0.1-alpha.3",
     "nuxt": "3.0.0-rc.12"
   }
 }
