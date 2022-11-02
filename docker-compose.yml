@@ -5,8 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      environment:
-        - GITHUB_CLIENT_ID
-        - GITHUB_CLIENT_SECRET
     ports:
       - "80:3000"
