@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   application:
     restart: unless-stopped
     expose:
