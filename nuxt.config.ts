@@ -9,12 +9,10 @@ export default defineNuxtConfig({
     auth: {
         nextAuth: {
             options: {
-                providers: [
-                    GithubProvider({
-                        clientId: process.env.CLIENT_ID,
-                        clientSecret: process.env.CLIENT_SECRET
-                    })
-                ]
+                providers: [GithubProvider({
+                    clientId: process.env.GITHUB_CLIENT_ID,
+                    clientSecret: process.env.GITHUB_CLIENT_SECRET
+                })]
             }
         }
     }
