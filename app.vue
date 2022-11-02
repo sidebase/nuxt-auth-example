@@ -20,6 +20,6 @@ import Welcome from "~/components/Welcome.vue";
 const { data, status, signOut, signIn } = await useSession({ required: false })
 
 useHead({
-  title: '🔐 nuxt-user-example',
+  title: '🔐 nuxt-auth-example',
 })
 </script>
