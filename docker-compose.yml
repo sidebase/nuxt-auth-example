@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+
+  application:
+    restart: unless-stopped
+    expose:
+      - 3000
+    build:
+      context: .
+    environment:
+      - NUXT_SECRET=${NUXT_SECRET}
+      - NUXT_URL=${NUXT_URL}
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+
+  reverse-proxy:
+    restart: unless-stopped
+    image: staticfloat/nginx-certbot
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      - CERTBOT_DOMAIN=${CERTBOT_DOMAIN}
+      - CERTBOT_EMAIL=${CERTBOT_EMAIL}
+      - ENVSUBST_VARS=CERTBOT_DOMAIN
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - ./nginx.conf:/etc/nginx/user.conf.d/nginx.conf:ro
+    depends_on:
+      - application
+
+volumes:
+    letsencrypt:
