@@ -1,10 +1,10 @@
 # Nuxt Auth Example
 
-![sidebase-preview-for-light](.github/preview.png)
-
 > This is an example project using [nuxt-auth](https://github.com/sidebase/nuxt-auth), the Nuxt3 authentication package built on [NextAuth](https://github.com/nextauthjs/next-auth).
 
 The deployed version can be found [here](https://nuxt-auth-example.sidebase.io).
+
+![sidebase-preview-for-light](.github/preview.png)
 
 ## Setup
 
