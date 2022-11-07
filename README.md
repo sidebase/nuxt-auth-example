@@ -32,7 +32,7 @@ The test deployment is done via docker-compose with `nginx-certbot` image which 
   - `GITHUB_CLIENT_ID` - A [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) Client Id
   - `GITHUB_CLIENT_SECRET` - A [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) secret
 - `NUXT_SECRET` - A random string used to generate authentication tokens
-- `NUXT_URL` - The URL of your authentication api (should be https://example.com/api/auth/)
+- `ORIGIN` - The URL of your authentication api (should be https://example.com, this no trailing slash)
 - `CERTBOT_*` - NuxtAuth requires a SSL certificate to run in production. We use Certbot to automatically generate these
   - `CERTBOT_DOMAIN` - The domain for which the Certbot should register a certificate
   - `CERTBOT_EMAIL` - The email under which the domain certificate will be registered
