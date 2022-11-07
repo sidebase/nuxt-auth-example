@@ -10,7 +10,7 @@ services:
       context: .
     environment:
       - NUXT_SECRET=${NUXT_SECRET}
-      - NUXT_URL=${NUXT_URL}
+      - ORIGIN=${ORIGIN}
       - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
       - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
 
