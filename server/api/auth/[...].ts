@@ -8,8 +8,8 @@ export default NuxtAuthHandler({
     providers: [
         // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
         GithubProvider.default({
-            clientId: process.env.GITHUB_CLIENT_ID || '172c3aa243f18b772a25',
-            clientSecret: process.env.GITHUB_CLIENT_SECRET || 'a3341f99898b8974ac691c8669efbd3486b1c445'
+            clientId: process.env.GITHUB_CLIENT_ID,
+            clientSecret: process.env.GITHUB_CLIENT_SECRET
         }),
         // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
         CredentialsProvider.default({
