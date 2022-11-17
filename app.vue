@@ -11,12 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { useSession } from '#imports'
-import Authenticated from "~/components/Authenticated.vue";
-import NotAuthenticated from "~/components/NotAuthenticated.vue";
-import Navbar from "~/components/Navbar.vue";
-import {useHead} from "#head";
-import Welcome from "~/components/Welcome.vue";
 const { data, status, signOut, signIn } = await useSession({ required: false })
 
 useHead({
