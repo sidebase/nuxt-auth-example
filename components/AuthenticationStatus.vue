@@ -9,11 +9,11 @@ const { status, data, signOut, signIn } = await useSession({ required: false })
           <img
               v-if="status === 'authenticated'"
               class="w-12 h-12 rounded-full"
-              :src="data.user.image"
+              :src="data?.user?.image"
               alt="User Avatar"
           />
           <h1 v-if="status === 'authenticated'" class="text-lg">
-            Authenticated as {{ data.user.name }}!
+            Authenticated as {{ data?.user?.name }}!
           </h1>
           <h1 v-else>
             Not logged in
