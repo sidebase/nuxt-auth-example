@@ -5,6 +5,7 @@
 <script setup lang="ts">
 definePageMeta({
   middleware: async () => {
+    console.log('in inline middleware! protecting secrets')
     await useSession()
   }
 })
