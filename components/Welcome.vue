@@ -3,7 +3,7 @@
     <h1 class="text-4xl font-bold mb-2">
       🔐 nuxt-auth
       <span class="text-xl font-light">
-        Nuxt user authentication and sessions, based on the popular NextAuth.js
+        Nuxt authentication and sessions, based on the popular NextAuth.js
       </span>
     </h1>
     <p>

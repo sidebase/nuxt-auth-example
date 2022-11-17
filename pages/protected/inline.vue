@@ -6,7 +6,7 @@
 definePageMeta({
   middleware: async () => {
     console.log('in inline middleware! protecting secrets')
-    await useSession()
+    await useSession({ callbackUrl: '/protected/inline' })
   }
 })
 </script>

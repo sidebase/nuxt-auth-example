@@ -1,4 +1,4 @@
-export default defineNuxtRouteMiddleware(async () => {
+export default defineNuxtRouteMiddleware(async (to) => {
     console.info('in named middleware! protecting secrets')
-    await useSession()
+    await useSession({ callbackUrl: to.path })
 })
