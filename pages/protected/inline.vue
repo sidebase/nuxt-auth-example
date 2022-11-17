@@ -1,5 +1,5 @@
 <template>
-  <Secret protection-type="inline" href="https://github.com/sidebase/nuxt-user#inline-middlewares" />
+  <Secret protection-type="inline" href="https://github.com/sidebase/nuxt-auth#inline-middlewares" />
 </template>
 
 <script setup lang="ts">
