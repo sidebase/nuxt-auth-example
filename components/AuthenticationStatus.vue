@@ -7,9 +7,9 @@ const { status, data, signOut, signIn } = await useSession({ required: false })
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <img
-              v-if="status === 'authenticated'"
+              v-if="status === 'authenticated' && data?.user?.image"
               class="w-12 h-12 rounded-full"
-              :src="data?.user?.image"
+              :src="data.user.image"
               alt="User Avatar"
           />
           <h1 v-if="status === 'authenticated'" class="text-lg">
