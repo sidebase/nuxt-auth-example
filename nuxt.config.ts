@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     ],
     modules: ['@nuxtjs/tailwindcss', '@sidebase/nuxt-auth'],
     auth: {
-        isEnabled: true,
         origin: process.env.ORIGIN,
     }
 })
