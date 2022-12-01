@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { status, data, signOut, signIn } = await useSession({ required: false })
+const { status, data, signOut, signIn } = useSession()
 </script>
 
 <template>

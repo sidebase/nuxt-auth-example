@@ -22,22 +22,6 @@
               Globally Protected
             </nuxt-link>
           </li>
-          <li>
-            <nuxt-link
-                href="/protected/inline"
-                class="block py-2 pr-4 pl-3 mx-2 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
-            >
-              Inline Protected
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-                href="/protected/named"
-                class="block py-2 pr-4 pl-3 mx-2 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
-            >
-              Named Protected
-            </nuxt-link>
-          </li>
           <li class="hidden md:block border-l-2 border-gray-700" />
           <li class="flex items-center ml-2 md:space-x-4">
             <a
