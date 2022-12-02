@@ -10,9 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useSession } from '#imports'
+const { data, status, getCsrfToken, getProviders } = useSession()
 
-const { data, status, getCsrfToken, getProviders } = await useSession({ required: false })
 const providers = await getProviders()
 const csrfToken = await getCsrfToken()
 </script>
