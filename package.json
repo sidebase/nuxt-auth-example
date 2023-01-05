@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "preview": "nuxt preview",
+    "start": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {

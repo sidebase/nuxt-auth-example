@@ -20,7 +20,7 @@ npm run dev
 npm run build
 
 # start production build
-node .output/server/index.mjs
+npm run start
 ```
 
 NOTE: For full functionality you'll need to add your own github oauth app client id and client secret in the [`NuxtAuthHandler`](./server/api/auth/%5B...%5D.ts). See [the next section](#environment-variables) for more on this and other configuration.
