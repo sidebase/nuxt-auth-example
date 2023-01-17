@@ -64,4 +64,4 @@ secrets:
     github_client_id: ""
     github_client_secret: ""
     nuxt_secret: ""
-    origin: ""
+    auth_origin: ""

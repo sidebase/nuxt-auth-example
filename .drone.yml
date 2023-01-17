@@ -25,8 +25,8 @@ steps:
     cache_from:
       - ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example:main
     registry:  https://ghcr.io
-    build_args:
-      - ORIGIN=https://nuxt-auth-example-k8s.sidebase.io
+    # build_args:
+    #   - ORIGIN=https://nuxt-auth-example-k8s.sidebase.io
     username:
       from_secret: SIDECHART_USERNAME
     password:
