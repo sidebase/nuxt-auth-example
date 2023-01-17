@@ -13,7 +13,7 @@ steps:
 - name: publish-sidebase-nuxt-auth-on-merge-main
   image: plugins/docker
   settings:
-    repo: ghcr.io/sidebase/nuxt-auth-example/sidebase-nuxt-auth
+    repo: ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example
     tags:
         - "main"
         - "${DRONE_COMMIT_SHA}"
@@ -23,8 +23,10 @@ steps:
     dockerfile: ./Dockerfile
     context:  ./
     cache_from:
-      - ghcr.io/sidebase/docs/sidebase-nuxt-auth-example:main
+      - ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example:main
     registry:  https://ghcr.io
+    build_args:
+      - ORIGIN=https://nuxt-auth-example-k8s.sidebase.io
     username:
       from_secret: SIDECHART_USERNAME
     password:
