@@ -6,8 +6,8 @@ name: publish-sidebase-nuxt-auth-on-merge-main
 trigger:
   event:
     - push
-  # branch:
-  #   - main
+  branch:
+    - main
 
 steps:
 - name: publish-sidebase-nuxt-auth-on-merge-main
@@ -25,8 +25,6 @@ steps:
     cache_from:
       - ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example:main
     registry:  https://ghcr.io
-    # build_args:
-    #   - ORIGIN=https://nuxt-auth-example-k8s.sidebase.io
     username:
       from_secret: SIDECHART_USERNAME
     password:
@@ -47,11 +45,11 @@ clone:
 trigger:
   event:
     - push
-  # branch:
-  #    - main
+  branch:
+     - main
 
 steps:
-- name: deploy_nuxt-auth-example.sidebase.io
+- name: deploy
   image: deusavalon/aws-chamber-helmsman:0.1.0
   environment:
     AWS_ACCESS_KEY_ID:
