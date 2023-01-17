@@ -20,7 +20,7 @@ service:
     external-dns.alpha.kubernetes.io/hostname: nuxt-auth-example-k8s.sidebase.io
   ports:
     http:
-      port: 3000
+      port: 80
   health: /api/healthz
   env:
     - name: "GREET"
