@@ -65,7 +65,7 @@ steps:
       from_secret: "GITHUB_PACKAGES_TOKEN"
   commands:
     - cd kubernetes/helm
-    - chamber export sidebase/nuxt-auth/dev --format dotenv > .env
+    - chamber export sidebase/nuxt-auth-example/dev --format dotenv > .env
     - aws eks update-kubeconfig --name eks-cluster-sidestream
     - helmsman --apply --debug -f helmsman.yml
 
