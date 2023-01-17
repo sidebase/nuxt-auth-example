@@ -6,8 +6,8 @@ name: publish-sidebase-nuxt-auth-on-merge-main
 trigger:
   event:
     - push
-  branch:
-    - main
+  # branch:
+  #   - main
 
 steps:
 - name: publish-sidebase-nuxt-auth-on-merge-main
@@ -45,8 +45,8 @@ clone:
 trigger:
   event:
     - push
-  branch:
-     - main
+  # branch:
+  #    - main
 
 steps:
 - name: deploy_nuxt-auth-example.sidebase.io
