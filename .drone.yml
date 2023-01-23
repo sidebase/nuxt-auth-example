@@ -1,0 +1,73 @@
+---
+kind: pipeline
+type: docker
+name: publish-sidebase-nuxt-auth-on-merge-main
+
+trigger:
+  event:
+    - push
+  branch:
+    - main
+
+steps:
+- name: publish-sidebase-nuxt-auth-on-merge-main
+  image: plugins/docker
+  settings:
+    repo: ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example
+    tags:
+        - "main"
+        - "${DRONE_COMMIT_SHA}"
+    custom_labels:
+        - key: org.opencontainers.image.source
+          value: https://github.com/sidebase/nuxt-auth-example
+    dockerfile: ./Dockerfile
+    context:  ./
+    cache_from:
+      - ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example:main
+    registry:  https://ghcr.io
+    username:
+      from_secret: SIDECHART_USERNAME
+    password:
+      from_secret: GITHUB_PACKAGES_TOKEN
+
+---
+
+kind: pipeline
+types: kubernetes
+name: deploy-sidebase-nuxt-auth-example
+
+environment:
+  GIT_LFS_SKIP_SMUDGE: 1
+
+clone:
+  depth: 1
+
+trigger:
+  event:
+    - push
+  branch:
+     - main
+
+steps:
+- name: deploy
+  image: deusavalon/aws-chamber-helmsman:0.1.0
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: "AWS_ACCESS_KEY_ID_FOR_KUBECONFIG"
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: "AWS_SECRET_ACCESS_KEY_FOR_KUBECONFIG"
+    AWS_DEFAULT_REGION: "eu-central-1"
+    SIDECHART_TOKEN:
+      from_secret: "SIDECHART_TOKEN"
+    SIDECHART_USERNAME:
+      from_secret: "SIDECHART_USERNAME"
+    GITHUB_PACKAGES_TOKEN:
+      from_secret: "GITHUB_PACKAGES_TOKEN"
+  commands:
+    - cd kubernetes/helm
+    - chamber export sidebase/nuxt-auth-example/dev --format dotenv > .env
+    - aws eks update-kubeconfig --name eks-cluster-sidestream
+    - helmsman --apply --debug -f helmsman.yml
+
+depends_on:
+  - publish-sidebase-nuxt-auth-on-merge-main

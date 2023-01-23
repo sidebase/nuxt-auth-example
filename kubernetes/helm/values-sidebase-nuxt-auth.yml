@@ -1,0 +1,67 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/sidebase/nuxt-auth-example/nuxt-auth-example
+  tag: main
+  pullPolicy: IfNotPresent
+
+imageCredentials:
+  password:
+
+volumes: []
+
+volumeMounts: []
+
+commitShortSHA: 123456
+
+service:
+  type: LoadBalancer
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: nuxt-auth-example.sidebase.io
+  ports:
+    http:
+      port: 80
+  health: /api/healthz
+  env:
+    - name: "GREET"
+      value: "scaffoldWashere"
+
+podAutoscaler:
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 75
+
+oauth2:
+  enabled: false
+
+ingress:
+  enabled: false
+  class: nginx
+  certManager:
+    enabled: true
+    issuer: cloudflare-issuer
+  url: main.the-scaffold.k8s.sidestream.tech
+  timeoutEnabled: false
+  annotations: {}
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 3Gi
+  requests:
+    cpu: 150m
+    memory: 2Gi
+
+secrets:
+  name: sidebase-nuxt-auth-secrets
+  data:
+    github_client_id: ""
+    github_client_secret: ""
+    nuxt_secret: ""
+    auth_origin: ""

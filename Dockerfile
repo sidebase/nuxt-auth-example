@@ -23,9 +23,10 @@ FROM $NODE_VERSION-slim AS production
 
 COPY --from=production-base /app/.output /app/.output
 
-# Service hostname
+# Service hostname and port
 ENV NUXT_HOST=0.0.0.0
-
+ENV NUXT_PORT=80
+ENV PORT=80
 # Service version
 ARG NUXT_APP_VERSION
 ENV NUXT_APP_VERSION=${NUXT_APP_VERSION}
