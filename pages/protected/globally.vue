@@ -1,3 +1,3 @@
 <template>
-  <Secret protection-type="global" href="https://github.com/sidebase/nuxt-auth#global-middleware" />
+  <Secret protection-type="global" href="https://sidebase.io/nuxt-auth/application-side/protecting-pages#global-middleware" />
 </template>
