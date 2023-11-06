@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: true,
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon'
   ],
   typescript: {
     shim: false

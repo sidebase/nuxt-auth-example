@@ -45,21 +45,21 @@
               href="https://github.com/sidebase/nuxt-auth"
               class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
             >
-              github
+              <Icon name="mdi:github" size="22" />
             </a>
             <a
               target="_blank"
               href="https://twitter.com/sidebase_io"
               class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
             >
-              Twitter
+              <Icon name="mdi:twitter" size="22" />
             </a>
             <a
               target="_blank"
               href="https://discord.gg/VzABbVsqAc"
               class="block py-2 pr-4 pl-3 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
             >
-              Discord
+              <Icon name="mdi:discord" size="22" />
             </a>
           </li>
         </ul>

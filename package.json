@@ -21,6 +21,7 @@
     "vue-tsc": "^1.0.24"
   },
   "dependencies": {
-    "next-auth": "4.21.1"
+    "next-auth": "4.21.1",
+    "nuxt-icon": "0.5.0"
   }
 }
