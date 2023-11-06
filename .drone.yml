@@ -7,7 +7,7 @@ trigger:
   event:
     - push
   branch:
-    - update-0.6
+    - main
 
 steps:
 - name: publish-sidebase-nuxt-auth-on-merge-main
@@ -46,7 +46,7 @@ trigger:
   event:
     - push
   branch:
-     - update-0.6
+     - main
 
 steps:
 - name: deploy
