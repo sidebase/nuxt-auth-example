@@ -8,8 +8,6 @@
     </p>
     <pre v-if="status"><span>Status:</span> {{ status }}</pre>
     <pre v-if="data"><span>Data:</span> {{ data }}</pre>
-    <pre v-if="csrfToken"><span>CSRF Token:</span> {{ csrfToken }}</pre>
-    <pre v-if="providers"><span>Providers:</span> {{ providers }}</pre>
   </div>
 </template>
 
@@ -17,8 +15,6 @@
 definePageMeta({ auth: false })
 const { data, status } = useAuth()
 
-const providers = []
-const csrfToken = []
 </script>
 
 <style scoped>

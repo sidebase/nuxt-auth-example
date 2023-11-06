@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { status, data, signOut, signIn } = useAuth()
+const { status, data, signOut } = useAuth()
 </script>
 
 <template>
@@ -7,13 +7,13 @@ const { status, data, signOut, signIn } = useAuth()
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-2">
         <img
-          v-if="status === 'authenticated' && data?.user?.image"
+          v-if="status === 'authenticated' && data?.picture"
           class="w-12 h-12 rounded-full"
-          :src="data.user.image"
+          :src="data?.picture"
           alt="User Avatar"
         >
         <h1 v-if="status === 'authenticated'" class="text-lg">
-          Authenticated as {{ data?.user?.name }}!
+          Authenticated as {{ data?.name }}!
         </h1>
         <h1 v-else>
           Not logged in
@@ -22,10 +22,12 @@ const { status, data, signOut, signIn } = useAuth()
       <button v-if="status === 'authenticated'" class="flex items-center justify-center space-x-2 bg-red-500 text-white rounded-lg py-2 px-3 text-lg" @click="signOut({ callbackUrl: '/' })">
         <span>Logout</span>
       </button>
-      <button v-else class="flex items-center justify-center space-x-2 bg-green-500 text-white rounded-lg py-2 px-3 text-lg" @click="signIn()">
-        <i class="fa fa-right-to-bracket pt-0.5" />
-        <span>Login</span>
-      </button>
+      <NuxtLink v-else href="/login">
+        <button class="flex items-center justify-center space-x-2 bg-green-500 text-white rounded-lg py-2 px-3 text-lg">
+          <i class="fa fa-right-to-bracket pt-0.5" />
+          <span>Login</span>
+        </button>
+      </NuxtLink>
     </div>
   </div>
 </template>
