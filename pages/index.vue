@@ -15,10 +15,10 @@
 
 <script lang="ts" setup>
 definePageMeta({ auth: false })
-const { data, status, getCsrfToken, getProviders } = useAuth()
+const { data, status } = useAuth()
 
-const providers = await getProviders()
-const csrfToken = await getCsrfToken()
+const providers = []
+const csrfToken = []
 </script>
 
 <style scoped>

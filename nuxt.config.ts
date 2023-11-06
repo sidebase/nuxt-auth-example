@@ -6,14 +6,27 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon'
   ],
+  build: {
+    transpile: ['jsonwebtoken']
+  },
   typescript: {
     shim: false
   },
   auth: {
     isEnabled: true,
-    baseUrl: process.env.AUTH_ORIGIN,
+    baseURL: process.env.AUTH_ORIGIN,
     provider: {
-      type: 'authjs'
+      type: 'local',
+      endpoints: {
+        getSession: { path: '/user' }
+      },
+      pages: {
+        login: '/'
+      },
+      token: {
+        signInResponseTokenPointer: '/token/accessToken'
+      },
+      sessionDataType: { id: 'string', email: 'string', name: 'string', role: 'admin | guest | account', subscriptions: "{ id: number, status: 'ACTIVE' | 'INACTIVE' }[]" }
     },
     globalAppMiddleware: {
       isEnabled: true

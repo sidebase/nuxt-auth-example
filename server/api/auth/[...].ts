@@ -1,3 +1,4 @@
+/*
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GithubProvider from 'next-auth/providers/github'
 import { NuxtAuthHandler } from '#auth'
@@ -48,3 +49,4 @@ export default NuxtAuthHandler({
     })
   ]
 })
+*/
