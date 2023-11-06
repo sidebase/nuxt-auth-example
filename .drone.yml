@@ -7,7 +7,7 @@ trigger:
   event:
     - push
   branch:
-    - main
+    - add-local-provider
 
 steps:
 - name: publish-sidebase-nuxt-auth-on-merge-main
@@ -46,7 +46,7 @@ trigger:
   event:
     - push
   branch:
-     - main
+     - add-local-provider
 
 steps:
 - name: deploy
