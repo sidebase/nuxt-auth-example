@@ -9,7 +9,7 @@ WORKDIR /app
 
 # copy the app, note .dockerignore
 COPY package.json .
-COPY pnpm-lock.json .
+COPY pnpm-lock.yaml .
 RUN pnpm i
 
 FROM dependency-base AS production-base
