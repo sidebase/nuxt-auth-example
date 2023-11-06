@@ -1,9 +1,9 @@
 <template>
   <div class="max-w-5xl mx-auto px-5 mt-5">
     <h1 class="text-4xl font-bold mb-2">
-      🔐 nuxt-auth
+      🔐 nuxt-auth (local provider)
       <span class="text-xl font-light">
-        Nuxt authentication and sessions, based on the popular NextAuth.js
+        Nuxt authentication and sessions
       </span>
     </h1>
     <p>
