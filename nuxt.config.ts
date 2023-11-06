@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   auth: {
     isEnabled: true,
-    baseUrl: process.env.ORIGIN,
+    baseUrl: process.env.AUTH_ORIGIN,
     provider: {
       type: 'authjs'
     },
