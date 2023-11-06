@@ -1,11 +1,22 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css: [
-        '@fortawesome/fontawesome-free/css/all.min.css'
-    ],
-    modules: ['@nuxtjs/tailwindcss', '@sidebase/nuxt-auth'],
-    auth: {
-        origin: process.env.ORIGIN,
-        enableGlobalAppMiddleware: true
+  devtools: true,
+  modules: [
+    '@sidebase/nuxt-auth',
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon'
+  ],
+  typescript: {
+    shim: false
+  },
+  auth: {
+    isEnabled: true,
+    baseUrl: process.env.ORIGIN,
+    provider: {
+      type: 'authjs'
+    },
+    globalAppMiddleware: {
+      isEnabled: true
     }
+  }
 })
