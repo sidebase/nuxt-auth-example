@@ -3,6 +3,9 @@ ARG NODE_VERSION=node:16.14.2
 
 FROM $NODE_VERSION AS dependency-base
 
+# install pnpm
+RUN npm i -g pnpm
+
 # create destination directory
 RUN mkdir -p /app
 WORKDIR /app
