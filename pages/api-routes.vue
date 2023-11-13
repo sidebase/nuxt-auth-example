@@ -3,33 +3,33 @@
     <div class="overflow-x-auto relative rounded">
       <table class="w-full text-sm text-left text-gray-400">
         <thead class="text-xs uppercase bg-gray-700 text-gray-400">
-        <tr>
-          <th scope="col" class="py-3 px-6">
-            Route
-          </th>
-          <th scope="col" class="py-3 px-6">
-            Method
-          </th>
-          <th scope="col" class="py-3 px-6">
-            Link
-          </th>
-        </tr>
+          <tr>
+            <th scope="col" class="py-3 px-6">
+              Route
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Method
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Link
+            </th>
+          </tr>
         </thead>
         <tbody>
           <APITableRow
-              route="/session"
-              method="get"
-              link="/api/auth/session"
+            route="/session"
+            method="get"
+            link="/api/auth/session"
           />
           <APITableRow
-              route="/csrf"
-              method="get"
-              link="/api/auth/csrf"
+            route="/csrf"
+            method="get"
+            link="/api/auth/csrf"
           />
           <APITableRow
-              route="/providers"
-              method="get"
-              link="/api/auth/providers"
+            route="/providers"
+            method="get"
+            link="/api/auth/providers"
           />
           <APITableRow
             route="/signin"
@@ -37,19 +37,19 @@
             link="/api/auth/signin"
           />
           <APITableRow
-              route="/signin/:provider"
-              method="post"
-              link="/api/auth/signin/github"
+            route="/signin/:provider"
+            method="post"
+            link="/api/auth/signin/github"
           />
           <APITableRow
-              route="/callback/:provider"
-              method="get & post"
-              link="/api/auth/callback/github"
+            route="/callback/:provider"
+            method="get & post"
+            link="/api/auth/callback/github"
           />
           <APITableRow
-              route="/signout"
-              method="get & post"
-              link="/api/auth/signout"
+            route="/signout"
+            method="get & post"
+            link="/api/auth/signout"
           />
         </tbody>
       </table>

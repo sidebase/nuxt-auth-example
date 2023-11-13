@@ -1,30 +1,53 @@
-name: nodejs CI
+
+name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  test:
+  lint:
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js 16.14.2
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
 
-      # Install locked dependencies and prepare types
-      - run: npm ci
+      - name: Setup
+        run: npm i -g @antfu/ni
 
-      # Check building
-      - run: npm run build
+      - name: Install
+        run: nci
 
-      # start dev-app and curl from it
-      - run: "timeout 30 npm run dev & (sleep 10 && curl --fail localhost:3000)"
+      - name: Lint
+        run: nr lint
 
-      # start prod-app and curl from it
-      - run: "timeout 30 npm run start & (sleep 10 && curl --fail localhost:3000)"
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16.14.2
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.2
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+  # TODO: Add more steps here, like "nr test" as you add the tooling for it

@@ -1,5 +1,5 @@
-export default defineEventHandler((event) => {
-    return {
-        service: 'online'
-    }
+export default defineEventHandler(() => {
+  return {
+    service: 'online'
+  }
 })
