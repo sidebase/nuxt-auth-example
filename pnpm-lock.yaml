@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^6.8.0
     version: 6.9.4(webpack@5.89.0)
   '@sidebase/nuxt-auth':
-    specifier: 0.6.0-rc.1
-    version: 0.6.0-rc.1(next-auth@4.21.1)(vue@3.3.8)
+    specifier: 0.6.2
+    version: 0.6.2(next-auth@4.21.1)(vue@3.3.8)
   '@types/node':
     specifier: ^18.11.18
     version: 18.18.8
@@ -1786,8 +1786,8 @@ packages:
       picomatch: 2.3.1
       rollup: 3.29.4
 
-  /@sidebase/nuxt-auth@0.6.0-rc.1(next-auth@4.21.1)(vue@3.3.8):
-    resolution: {integrity: sha512-ncwDLD1koXeO/fFwcCwjA9uxf0b755s5yHJQxsBjRoCyRNadz9snSCe8e78N8i/NW8da7rZrzKWejIOXlVSizw==}
+  /@sidebase/nuxt-auth@0.6.2(next-auth@4.21.1)(vue@3.3.8):
+    resolution: {integrity: sha512-gD3noKzbQ+X7fux3F7Sjx5dPAxb420GH4g/naT5Rjn3t+E0xjSIQi7AFVaPDYCYyKYth5W1cKvz7jUPMcCeNdw==}
     peerDependencies:
       next-auth: ^4.21.1
     dependencies:
